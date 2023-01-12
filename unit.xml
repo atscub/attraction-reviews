@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.0370" tests="8" failures="1">
-  <testsuite name="Root Suite" timestamp="2023-01-12T08:45:29" tests="0" time="0.0000" failures="0">
+<testsuites name="Mocha Tests" time="0.0330" tests="8" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-01-12T09:59:03" tests="0" time="0.0000" failures="0">
   </testsuite>
-  <testsuite name="/attractions/search?score=N" timestamp="2023-01-12T08:45:29" tests="8" file="/home/abraham/Personal/Jobs/4160440b-8eb4-4b23-8d7e-8a93a52b1625/test/test.js" time="0.0370" failures="1">
-    <testcase name="/attractions/search?score=N it should GET all attractions with a review score higher than or equal to 7" time="0.0190" classname="it should GET all attractions with a review score higher than or equal to 7">
+  <testsuite name="/attractions/search?score=N" timestamp="2023-01-12T09:59:03" tests="8" file="/home/abraham/Personal/Jobs/4160440b-8eb4-4b23-8d7e-8a93a52b1625/test/test.js" time="0.0330" failures="0">
+    <testcase name="/attractions/search?score=N it should GET all attractions with a review score higher than or equal to 7" time="0.0180" classname="it should GET all attractions with a review score higher than or equal to 7">
     </testcase>
-    <testcase name="/attractions/search?score=N it should GET all attractions with a review score higher than or equal to 10" time="0.0000" classname="it should GET all attractions with a review score higher than or equal to 10">
-      <failure message="expected 8 to be at least 10" type="AssertionError"><![CDATA[AssertionError: expected 8 to be at least 10
-    at test/test.js:38:60
-    at Test.Request.callback (node_modules/superagent/lib/node/index.js:619:12)
-    at node_modules/superagent/lib/node/index.js:795:18
-    at IncomingMessage.<anonymous> (node_modules/superagent/lib/node/parsers/json.js:16:7)
-    at endReadableNT (internal/streams/readable.js:1317:12)
-    at processTicksAndRejections (internal/process/task_queues.js:82:21)]]></failure>
+    <testcase name="/attractions/search?score=N it should GET no attractions when review score higher than or equal to 10" time="0.0040" classname="it should GET no attractions when review score higher than or equal to 10">
     </testcase>
     <testcase name="/attractions/search?score=N it should GET all attractions with a review score higher than 1" time="0.0020" classname="it should GET all attractions with a review score higher than 1">
     </testcase>
-    <testcase name="/attractions/search?score=N it should GET no attractions when the requested review score higher than 10" time="0.0020" classname="it should GET no attractions when the requested review score higher than 10">
+    <testcase name="/attractions/search?score=N it should GET no attractions when the requested review score higher than 10" time="0.0030" classname="it should GET no attractions when the requested review score higher than 10">
     </testcase>
-    <testcase name="/attractions/search?score=N it should GET no attractions when the requested review score lower than 1" time="0.0030" classname="it should GET no attractions when the requested review score lower than 1">
+    <testcase name="/attractions/search?score=N it should GET no attractions when the requested review score lower than 1" time="0.0010" classname="it should GET no attractions when the requested review score lower than 1">
     </testcase>
-    <testcase name="/attractions/search?score=N it should GET no attractions when the requested review score is 0" time="0.0020" classname="it should GET no attractions when the requested review score is 0">
+    <testcase name="/attractions/search?score=N it should GET no attractions when the requested review score is 0" time="0.0010" classname="it should GET no attractions when the requested review score is 0">
     </testcase>
-    <testcase name="/attractions/search?score=N it should return 400 on non numerical requested review score" time="0.0050" classname="it should return 400 on non numerical requested review score">
+    <testcase name="/attractions/search?score=N it should return 400 on non numerical requested review score" time="0.0020" classname="it should return 400 on non numerical requested review score">
     </testcase>
-    <testcase name="/attractions/search?score=N it should return 400 on empty requested review score input" time="0.0040" classname="it should return 400 on empty requested review score input">
+    <testcase name="/attractions/search?score=N it should return 400 on empty requested review score input" time="0.0020" classname="it should return 400 on empty requested review score input">
     </testcase>
   </testsuite>
 </testsuites>

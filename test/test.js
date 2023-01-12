@@ -24,19 +24,15 @@ describe('/attractions/search?score=N', function() {
             });
      });
 
-    it('it should GET all attractions with a review score higher than or equal to 10', (done) => {
+    it('it should GET no attractions when review score higher than or equal to 10', (done) => {
         chai.request(server)
-            .get('/attractions/search?score=7')
+            .get('/attractions/search?score=10')
             .end((err, res) => {
                   res.should.have.status(200);
                   attractions = res.body;
 
                   attractions.should.be.a('array');
-                  attractions.length.should.be.eql(1);
-
-                  for (attraction of attractions) {
-                    attraction.average_review_score.should.gte(10)
-                  }
+                  attractions.length.should.be.eql(0);
               done();
             });
      });
