@@ -47,6 +47,10 @@ exports.getAllAttractionsReviews = () => {
   return reviews;
 };
 
+const _attractionScore = (attraction) => {
+    const reviews = exports.getAllAttractionsReviews().filter(review => review.getAttractionId() === attraction.getId());
+    return reviews.reduce((sum, review) => sum + review.getScore(), 0) / reviews.length;
+}
 
 /* 
   Example output:
@@ -60,5 +64,7 @@ exports.getAllAttractionsReviews = () => {
   }]
 */
 exports.getAttractionsByReviewScore = (score) => {
-  // TODO: Implement a method that gets all attractions with an average review score equal or higher than a certain score.
+  return exports.getAllAttractions()
+    .map(attraction => ({...attraction, score: _attractionScore(attraction)}))
+    .filter(attraction => attraction.score >= score);
 }
