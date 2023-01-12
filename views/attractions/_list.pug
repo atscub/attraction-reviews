@@ -1,0 +1,6 @@
+include _card
+
+mixin attractions_list(attractions)
+  div.attractions
+    each attraction in attractions
+      +attraction_card(attraction)

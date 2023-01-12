@@ -1,0 +1,40 @@
+body {
+  width: 800px;
+  margin:  0 auto;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.filters {
+  border-bottom:  1px solid #ddd;
+  margin-bottom:  30px;
+  padding-bottom: 20px;
+}
+
+
+.attraction {
+  margin-bottom: 20px;
+  display: flex;
+  line-height: 50px;
+}
+
+.attraction-photo {
+  margin-bottom: 5px;
+}
+
+
+.attraction-score {
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    background: #005fc5;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+}
