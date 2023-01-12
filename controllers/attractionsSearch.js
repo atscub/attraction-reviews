@@ -1,5 +1,6 @@
 const Attraction = require('../models/attraction.js');
 const Review = require('../models/review.js');
+const { ApiError } = require('../utils/errors.js');
 
 const attractions = [
   new Attraction(1, "Boat Tour around canals"),
@@ -48,8 +49,8 @@ exports.getAllAttractionsReviews = () => {
 };
 
 const _attractionScore = (attraction) => {
-    const reviews = exports.getAllAttractionsReviews().filter(review => review.getAttractionId() === attraction.getId());
-    return reviews.reduce((sum, review) => sum + review.getScore(), 0) / reviews.length;
+  const reviews = exports.getAllAttractionsReviews().filter(review => review.getAttractionId() === attraction.getId());
+  return reviews.reduce((sum, review) => sum + review.getScore(), 0) / reviews.length;
 }
 
 /* 
@@ -64,6 +65,14 @@ const _attractionScore = (attraction) => {
   }]
 */
 exports.getAttractionsByReviewScore = (score) => {
+  if (isNaN(score) || !score) {
+    throw new ApiError("Invalid score", 400, []);
+  }
+
+  if (score < 1) {
+    return [];
+  }
+
   return exports.getAllAttractions()
     .map(attraction => ({...attraction, average_review_score: _attractionScore(attraction)}))
     .filter(attraction => attraction.average_review_score >= score);
