@@ -40,18 +40,19 @@ const reviews = [
   new Review(6, 7)
 ];
 
+const _attractionScore = (attraction) => {
+  const reviews = exports.getAllAttractionsReviews().filter(review => review.getAttractionId() === attraction.getId());
+  return reviews.reduce((sum, review) => sum + review.getScore(), 0) / reviews.length;
+}
+
 exports.getAllAttractions =  () => {
-  return attractions;
+  return attractions.
+    map(attraction => ({...attraction, average_review_score: _attractionScore(attraction)}));
 };
 
 exports.getAllAttractionsReviews = () => {
   return reviews;
 };
-
-const _attractionScore = (attraction) => {
-  const reviews = exports.getAllAttractionsReviews().filter(review => review.getAttractionId() === attraction.getId());
-  return reviews.reduce((sum, review) => sum + review.getScore(), 0) / reviews.length;
-}
 
 /* 
   Example output:
@@ -74,6 +75,5 @@ exports.getAttractionsByReviewScore = (score) => {
   }
 
   return exports.getAllAttractions()
-    .map(attraction => ({...attraction, average_review_score: _attractionScore(attraction)}))
     .filter(attraction => attraction.average_review_score >= score);
 }
