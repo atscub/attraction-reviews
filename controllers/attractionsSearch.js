@@ -65,6 +65,6 @@ const _attractionScore = (attraction) => {
 */
 exports.getAttractionsByReviewScore = (score) => {
   return exports.getAllAttractions()
-    .map(attraction => ({...attraction, score: _attractionScore(attraction)}))
-    .filter(attraction => attraction.score >= score);
+    .map(attraction => ({...attraction, average_review_score: _attractionScore(attraction)}))
+    .filter(attraction => attraction.average_review_score >= score);
 }
